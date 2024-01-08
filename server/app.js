@@ -4,7 +4,7 @@ import cors from "cors";
 import trips from "./db.js";
 
 const app = express();
-const port = 4001;
+const port = 4002;
 
 app.use(cors());
 app.use(bodyParser.json());

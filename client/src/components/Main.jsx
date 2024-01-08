@@ -1,8 +1,8 @@
-import "./App.css";
+import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function App() {
+function Main() {
   const [textSearch, setTextSearch] = useState("");
   const [dataBlogPost, setDataBlogPost] = useState([]);
 
@@ -16,21 +16,8 @@ function App() {
   useEffect(() => {
     getTextSerch();
   }, [textSearch]);
-
   return (
     <div>
-      <div className=" ml-[150px] mr-[150px] mt-[50px] ">
-        <h1 className="text-[50px] text-[#2E9BDB] text-center">เที่ยวไหนดี</h1>
-        <p>ค้นหาที่เที่ยว</p>
-        <input
-          type="text"
-          placeholder="หาที่เที่ยวแล้วไปกัน ..."
-          className="w-[100%] text-center border-b-2 outline-none"
-          onChange={(e) => {
-            setTextSearch(e.target.value);
-          }}
-        />
-      </div>
       {dataBlogPost.map((item, index) => (
         <div className=" m-[50px] flex justify-center " key={index}>
           <div className=" bg-slate-500 w-[300px] h-[300px] rounded-2xl object-cover">
@@ -88,4 +75,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;
